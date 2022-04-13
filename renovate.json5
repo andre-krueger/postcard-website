@@ -1,0 +1,9 @@
+{
+  extends: ["config:base"],
+  // Needed to have yarn-project.nix changes committed, too
+  postUpgradeTasks: {
+    commands: ["pwd"],
+    fileFilters: ["**/**"],
+    executionMode: "branch",
+  },
+}

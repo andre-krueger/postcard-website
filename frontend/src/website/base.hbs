@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ title }}</title>
+    <meta charset="utf-8" />
+    <link href="index.css" rel="stylesheet" />
+  </head>
+  <body>
+    {{~> body}}
+  </body>
+  {{#if debug}}
+  <script src="http://localhost:35729/livereload.js?snipver=1"></script>
+  {{/if}}
+</html>
