@@ -50,8 +50,8 @@
       frontend = pkgs.callPackage ./frontend { };
 
       backendPreBuildPhase = ''
-        mkdir -p static
-        cp -r ${frontend}/static/* static
+        mkdir templates
+        rsync -avHXP --include='*.html' --include='*.hbs' --include='*/' --exclude='*' --prune-empty-dirs ${frontend}/static/ templates/
       '';
 
       backendCheck = craneLib.cargoClippy {
@@ -59,6 +59,7 @@
         src = backendSrc;
         preBuild = backendPreBuildPhase;
         cargoClippyExtraArgs = "--all-features -- -D warnings";
+        buildInputs = [ pkgs.rsync ];
       };
 
       backendFormat = craneLib.cargoFmt { src = backendSrc; };
@@ -67,6 +68,7 @@
         cargoArtifacts = backendCheck;
         src = backendSrc;
         preBuild = backendPreBuildPhase;
+        buildInputs = [ pkgs.rsync ];
       };
     in {
       devShells.${system}.default =

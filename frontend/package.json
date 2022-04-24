@@ -5,13 +5,26 @@
   "packageManager": "yarn@3.2.0",
   "targets": {
     "admin": {
-      "source": "src/admin/index.html"
+      "source": "src/admin/index/templates/index.html",
+      "distDir": "dist/admin/index",
+      "publicUrl": "/static/admin/index"
     },
-    "website": {
-      "source": [
-        "src/website/base.hbs",
-        "src/website/index.hbs"
-      ]
+    "website.common": {
+      "source": "src/website/common/templates/base.hbs",
+      "distDir": "dist/website/common",
+      "publicUrl": "/static/website/common"
+    },
+    "website.index": {
+      "source": "src/website/index/templates/index.hbs",
+      "distDir": "dist/website/index",
+      "publicUrl": "/static/website/index"
+    }
+  },
+  "parcel-namer-rewrite": {
+    "chain": "@parcel/namer-default",
+    "rules": {
+      "(.*)\\.(hbs)": "templates/$1.hbs",
+      "(.*)\\.(html)": "templates/$1.html"
     }
   },
   "browserlist": [
@@ -24,12 +37,14 @@
     "react-dom": "18.0.0"
   },
   "devDependencies": {
-    "@parcel/config-default": "2.4.1",
-    "@parcel/packager-html": "2.4.1",
-    "@parcel/transformer-html": "2.4.1",
-    "@parcel/transformer-posthtml": "2.4.1",
-    "@types/react": "18.0.5",
-    "@types/react-dom": "18.0.1",
+    "@parcel/config-default": "2.5.0",
+    "@parcel/packager-html": "2.5.0",
+    "@parcel/packager-raw-url": "2.5.0",
+    "@parcel/transformer-html": "2.5.0",
+    "@parcel/transformer-posthtml": "2.5.0",
+    "@parcel/transformer-webmanifest": "2.5.0",
+    "@types/react": "18.0.6",
+    "@types/react-dom": "18.0.2",
     "@typescript-eslint/eslint-plugin": "5.20.0",
     "@typescript-eslint/parser": "5.20.0",
     "eslint": "8.13.0",
@@ -38,7 +53,8 @@
     "husky": "7.0.4",
     "lint-staged": "12.1.7",
     "livereload": "0.9.3",
-    "parcel": "2.4.1",
+    "parcel": "2.5.0",
+    "parcel-namer-rewrite": "2.0.0-rc.2",
     "postcss": "8.4.12",
     "prettier": "2.6.2",
     "tailwindcss": "3.0.24",
@@ -50,16 +66,11 @@
     "../backend/**/*.rs": "rustfmt --edition 2021"
   },
   "scripts": {
-    "start:admin": "parcel --target admin",
-    "start:website": "yarn livereload & parcel --dist-dir ../backend/static/website --target website --public-url /static/website",
-    "build:dev": "yarn build:dev:admin && yarn build:dev:website",
-    "build:dev:admin": "yarn build:dev:base --target admin --public-url /static/admin",
-    "build:dev:website": "yarn build:dev:base --target website --public-url /static/website",
-    "build:dev:base": "parcel build --dist-dir ../backend/static --no-content-hash --no-optimize",
-    "build": "yarn build:admin && yarn build:website",
-    "build:admin": "parcel build --target admin --public-url /static/admin",
-    "build:website": "parcel build --target website --public-url /static/website",
-    "postinstall": "cd .. && husky install frontend/.husky && cd frontend && yarn build:dev",
-    "livereload": "livereload -e 'hbs,js,css' ../backend"
+    "start:admin": "parcel src/admin/index/templates/index.html",
+    "build": "parcel build",
+    "build:dev": "parcel build",
+    "start:website": "yarn livereload & ./start.sh",
+    "postinstall": "cd .. && husky install frontend/.husky && cd frontend && ./build.sh",
+    "livereload": "livereload -e 'hbs,js,css' ../backend/static"
   }
 }
