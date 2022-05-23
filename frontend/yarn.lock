@@ -922,12 +922,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:18.0.1":
-  version: 18.0.1
-  resolution: "@types/react-dom@npm:18.0.1"
+"@types/react-dom@npm:18.0.5":
+  version: 18.0.5
+  resolution: "@types/react-dom@npm:18.0.5"
   dependencies:
     "@types/react": "*"
-  checksum: 6c183e2e50240b77ed767cd968fe061ef4f2b47f84da5ec9e412a767d68c9a004d1f6ccca4295a5aa2c3ee723377e59006a2031f3767c00d8ac9e240a51bb142
+  checksum: cd48b81950f499b52a3f0c08261f00046f9b7c96699fa249c9664e257e820daf6ecac815cd1028cebc9d105094adc39d047d1efd79214394b8b2d515574c0787
   languageName: node
   linkType: hard
 
@@ -2269,7 +2269,7 @@ __metadata:
     "@parcel/transformer-html": 2.4.1
     "@parcel/transformer-posthtml": 2.4.1
     "@types/react": 18.0.5
-    "@types/react-dom": 18.0.1
+    "@types/react-dom": 18.0.5
     "@typescript-eslint/eslint-plugin": 5.20.0
     "@typescript-eslint/parser": 5.20.0
     eslint: 8.13.0
