@@ -931,7 +931,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:18.0.5":
+"@types/react@npm:*":
   version: 18.0.5
   resolution: "@types/react@npm:18.0.5"
   dependencies:
@@ -939,6 +939,17 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: 70d3336d43ef25509fa89ef3278f57fdf1945fc921e69b7890a78ab9a52a55ee38e2f13aa71eb4f6032b7311e7557860ce8836c1acf3028304989571c9736a96
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:18.0.14":
+  version: 18.0.14
+  resolution: "@types/react@npm:18.0.14"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: 608eb57a383eedc54c79949673e5e8314f6b0c61542bff58721c8c47a18c23e2832e77c656050c2c2c004b62cf25582136c7c56fe1b6263a285c065fae31dbcf
   languageName: node
   linkType: hard
 
@@ -2268,7 +2279,7 @@ __metadata:
     "@parcel/packager-html": 2.4.1
     "@parcel/transformer-html": 2.4.1
     "@parcel/transformer-posthtml": 2.4.1
-    "@types/react": 18.0.5
+    "@types/react": 18.0.14
     "@types/react-dom": 18.0.1
     "@typescript-eslint/eslint-plugin": 5.20.0
     "@typescript-eslint/parser": 5.20.0
