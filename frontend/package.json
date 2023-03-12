@@ -28,7 +28,7 @@
     "@parcel/packager-html": "2.4.1",
     "@parcel/transformer-html": "2.4.1",
     "@parcel/transformer-posthtml": "2.4.1",
-    "@types/react": "18.0.5",
+    "@types/react": "18.0.28",
     "@types/react-dom": "18.0.1",
     "@typescript-eslint/eslint-plugin": "5.20.0",
     "@typescript-eslint/parser": "5.20.0",
