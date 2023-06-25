@@ -24,10 +24,10 @@
     "react-dom": "18.0.0"
   },
   "devDependencies": {
-    "@parcel/config-default": "2.4.1",
-    "@parcel/packager-html": "2.4.1",
-    "@parcel/transformer-html": "2.4.1",
-    "@parcel/transformer-posthtml": "2.4.1",
+    "@parcel/config-default": "2.9.3",
+    "@parcel/packager-html": "2.9.3",
+    "@parcel/transformer-html": "2.9.3",
+    "@parcel/transformer-posthtml": "2.9.3",
     "@types/react": "18.0.5",
     "@types/react-dom": "18.0.1",
     "@typescript-eslint/eslint-plugin": "5.20.0",
@@ -38,7 +38,7 @@
     "husky": "7.0.4",
     "lint-staged": "12.1.7",
     "livereload": "0.9.3",
-    "parcel": "2.4.1",
+    "parcel": "2.9.3",
     "postcss": "8.4.12",
     "prettier": "2.6.2",
     "tailwindcss": "3.0.24",
